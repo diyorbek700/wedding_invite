@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ұл тойға шақыру — Имран, Ақмаль, Әлинұр</title>
+
+<meta name="description" content="Құрметті ағайын-туыс, дос-жаран! Сіздерді ұлдарымыз Имран, Ақмаль мен Әлинұрдың құрметіне арналған ұл тойымыздың қадірлі қонағы болуға шақырамыз. 24 қыркүйек, бейсенбі.">
+<meta name="theme-color" content="#0d1b2e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#eaf3fb" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="kk_KZ">
+<meta property="og:site_name" content="Ұл тойға шақыру">
+<meta property="og:title" content="Ұл тойға шақыру — Имран, Ақмаль, Әлинұр">
+<meta property="og:description" content="24 қыркүйек, бейсенбі · Янгиюль қаласы, «Shohona» мейрамханасы. Қадірлі қонағымыз болуға шақырамыз!">
+<meta property="og:image" content="og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ұл тойға шақыру — Имран, Ақмаль, Әлинұр">
+<meta name="twitter:description" content="24 қыркүйек, бейсенбі · «Shohona» мейрамханасы">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f7ec4'/%3E%3Cpath d='M16 6l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L16 20.3l-5.6 2.9 1.1-6.2L7 12.6l6.2-.9z' fill='%23fff'/%3E%3C/svg%3E">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --blue-900:#0d1b2e; --blue-800:#12263f; --blue-700:#1b3a5c;
+  --blue-600:#245b8f; --blue-500:#2f7ec4; --blue-400:#57a3e0;
+  --blue-300:#9ccbf0; --blue-200:#cfe6f8; --blue-100:#eaf3fb;
+  --gold-500:#c9a227; --gold-400:#e0be55; --gold-200:#f2e2b0;
+
+  --bg:#eef6fd;
+  --bg-2:#ffffff;
+  --surface:rgba(255,255,255,.72);
+  --surface-line:rgba(47,126,196,.18);
+  --ink:#10243c;
+  --ink-soft:#3d5a78;
+  --accent:var(--blue-500);
+  --accent-soft:var(--blue-600);
+  --metal-1:#dfe9f4; --metal-2:#9dbcd8; --metal-3:#5b87b3;
+  --shadow:0 24px 60px -28px rgba(13,44,80,.45);
+  --glow:0 0 0 1px rgba(47,126,196,.14);
+
+  --f-display:"Didot","Bodoni MT","Playfair Display",Georgia,"Times New Roman",serif;
+  --f-body:"Futura","Century Gothic",Optima,"Segoe UI",system-ui,-apple-system,sans-serif;
+  --ease:cubic-bezier(.22,.9,.28,1);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b1726; --bg-2:#101f33;
+    --surface:rgba(20,38,60,.66);
+    --surface-line:rgba(156,203,240,.16);
+    --ink:#e8f2fb; --ink-soft:#a6c2dd;
+    --accent:var(--blue-400); --accent-soft:var(--blue-300);
+    --metal-1:#c7d8e8; --metal-2:#7fa3c4; --metal-3:#3f6a95;
+    --shadow:0 24px 60px -28px rgba(0,0,0,.75);
+    --glow:0 0 0 1px rgba(156,203,240,.12);
+  }
+}
+:root[data-theme="light"]{
+  --bg:#eef6fd; --bg-2:#ffffff; --surface:rgba(255,255,255,.72);
+  --surface-line:rgba(47,126,196,.18); --ink:#10243c; --ink-soft:#3d5a78;
+  --accent:var(--blue-500); --accent-soft:var(--blue-600);
+}
+:root[data-theme="dark"]{
+  --bg:#0b1726; --bg-2:#101f33; --surface:rgba(20,38,60,.66);
+  --surface-line:rgba(156,203,240,.16); --ink:#e8f2fb; --ink-soft:#a6c2dd;
+  --accent:var(--blue-400); --accent-soft:var(--blue-300);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--f-body);
+  background:var(--bg); color:var(--ink);
+  line-height:1.65; overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body.locked{overflow:hidden;height:100vh}
+img,svg{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+
+/* ============ ENVELOPE / GATE ============ */
+.gate{
+  position:fixed; inset:0; z-index:100;
+  display:grid; place-items:center;
+  padding:clamp(24px,6vw,56px) 20px;
+  background:
+    radial-gradient(120% 90% at 50% 0%, #21344c 0%, #16273c 45%, #0c1727 100%);
+  color:#f4e9d2;
+  text-align:center;
+  transition:opacity .9s var(--ease), visibility .9s;
+}
+.gate::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(118deg, rgba(255,255,255,.05) 0 42%, rgba(0,0,0,.22) 42% 100%);
+  pointer-events:none;
+}
+.gate::after{
+  content:""; position:absolute; inset:0; opacity:.35; pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.25) .6px, transparent .6px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(70% 60% at 50% 50%, #000, transparent 75%);
+}
+.gate.is-open{opacity:0; visibility:hidden}
+.gate__inner{position:relative;z-index:1;display:grid;gap:clamp(22px,5vh,46px);justify-items:center;max-width:640px}
+.gate__script{
+  font-family:var(--f-display); font-style:italic;
+  font-size:clamp(30px,7.6vw,54px); line-height:1.15;
+  color:var(--gold-400);
+  text-shadow:0 2px 18px rgba(224,190,85,.25);
+}
+.gate__kicker{
+  font-size:clamp(14px,3.4vw,20px); letter-spacing:.42em;
+  text-indent:.42em; color:var(--gold-200); font-weight:500;
+}
+.gate__hint{font-size:clamp(13px,3.3vw,16px); color:var(--gold-200); opacity:.85; letter-spacing:.03em; max-width:24ch}
+
+/* wax seal */
+.seal{
+  position:relative; width:clamp(160px,44vw,208px); aspect-ratio:1;
+  border-radius:50%; display:grid; place-items:center;
+  background:conic-gradient(from .5turn, #e8d9bd, #b99b6f 12%, #f0e4cc 25%, #a98a5f 38%, #e6d5b6 52%, #b0906a 68%, #f2e7d0 82%, #bb9d72 100%);
+  box-shadow:0 22px 40px -18px rgba(0,0,0,.75), inset 0 0 0 1px rgba(255,255,255,.35);
+  clip-path:polygon(50% 0%,60% 4%,71% 2%,78% 11%,89% 13%,91% 24%,99% 32%,96% 43%,100% 53%,94% 62%,96% 73%,87% 79%,84% 90%,73% 91%,65% 98%,54% 95%,45% 100%,36% 94%,25% 96%,19% 87%,8% 84%,7% 73%,0% 64%,4% 53%,1% 42%,9% 35%,9% 24%,19% 18%,23% 8%,34% 8%,42% 1%);
+  transition:transform .5s var(--ease), filter .5s var(--ease);
+  animation:sealPulse 3.4s ease-in-out infinite;
+}
+.seal::before{
+  content:""; position:absolute; inset:14%;
+  border-radius:50%;
+  background:radial-gradient(circle at 34% 28%, #f4e8d1, #cdb185 55%, #a98b60);
+  box-shadow:inset 0 2px 10px rgba(255,255,255,.6), inset 0 -4px 12px rgba(90,66,36,.5);
+}
+.seal__label{
+  position:relative; z-index:1;
+  font-size:clamp(15px,3.9vw,19px); font-weight:700;
+  letter-spacing:.3em; text-indent:.3em; color:#4a3316;
+}
+.seal:hover,.seal:focus-visible{transform:scale(1.05);animation-play-state:paused}
+.seal:focus-visible{outline:2px solid var(--gold-200);outline-offset:10px}
+.seal:active{transform:scale(.96)}
+@keyframes sealPulse{0%,100%{box-shadow:0 22px 40px -18px rgba(0,0,0,.75), inset 0 0 0 1px rgba(255,255,255,.35), 0 0 0 0 rgba(224,190,85,.35)}50%{box-shadow:0 22px 40px -18px rgba(0,0,0,.75), inset 0 0 0 1px rgba(255,255,255,.35), 0 0 0 22px rgba(224,190,85,0)}}
+
+/* ============ PAGE SHELL ============ */
+.page{opacity:0; transition:opacity 1s var(--ease) .15s}
+.page.is-visible{opacity:1}
+
+section{
+  position:relative;
+  padding:clamp(64px,12vw,120px) clamp(18px,5vw,32px);
+  text-align:center;
+  overflow:hidden;
+}
+.wrap{max-width:720px;margin-inline:auto;position:relative;z-index:1}
+
+/* soft sky backdrop */
+.sky{
+  background:
+    radial-gradient(90% 60% at 50% -10%, color-mix(in srgb, var(--accent) 22%, transparent) 0%, transparent 70%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 55%, var(--bg) 100%);
+}
+.arch{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:min(84vw,560px); aspect-ratio:.66;
+  border-radius:50% 50% 14px 14px / 42% 42% 6px 6px;
+  background:color-mix(in srgb, var(--bg-2) 88%, var(--accent) 12%);
+  box-shadow:0 40px 80px -50px rgba(13,44,80,.6);
+  opacity:.75; pointer-events:none;
+}
+
+/* typography */
+.script{
+  font-family:var(--f-display); font-style:italic; font-weight:400;
+  font-size:clamp(42px,12vw,86px); line-height:1.05; letter-spacing:.01em;
+  color:var(--ink);
+}
+.eyebrow{
+  font-size:clamp(13px,3.4vw,17px); letter-spacing:.44em; text-indent:.44em;
+  color:var(--ink-soft); font-weight:500; text-transform:uppercase;
+}
+.h2{
+  font-family:var(--f-display); font-style:italic;
+  font-size:clamp(28px,6.6vw,44px); color:var(--ink); font-weight:400;
+}
+.body-text{
+  font-size:clamp(14px,3.7vw,17px); letter-spacing:.055em; line-height:2;
+  color:var(--ink-soft); text-transform:uppercase;
+}
+.names{display:grid;gap:2px}
+
+/* ornaments */
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--accent);opacity:.85}
+.orn::before,.orn::after{content:"";height:1px;width:min(28vw,110px);background:linear-gradient(90deg,transparent,currentColor)}
+.orn::after{background:linear-gradient(270deg,transparent,currentColor)}
+
+/* geometric pattern band */
+.band{
+  height:14px; width:100%;
+  background-image:
+    linear-gradient(45deg, var(--accent) 25%, transparent 25%, transparent 75%, var(--accent) 75%),
+    linear-gradient(45deg, var(--accent) 25%, transparent 25%, transparent 75%, var(--accent) 75%);
+  background-size:14px 14px; background-position:0 0, 7px 7px;
+  opacity:.22;
+}
+
+/* ============ HERO ============ */
+.hero{min-height:100svh;display:grid;align-items:center}
+.hero .wrap{display:grid;gap:clamp(18px,4vh,34px);justify-items:center}
+.hero__badge{
+  width:clamp(140px,38vw,190px); aspect-ratio:1; border-radius:50%;
+  display:grid;place-items:center;
+  background:radial-gradient(circle at 35% 30%, color-mix(in srgb,var(--accent) 32%, var(--bg-2)) 0%, var(--bg-2) 70%);
+  box-shadow:var(--shadow),var(--glow);
+}
+.scroll-cue{
+  display:grid;justify-items:center;gap:8px;
+  font-size:11px;letter-spacing:.32em;color:var(--ink-soft);
+  animation:bob 2.4s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* ============ DATE CARD ============ */
+.card{
+  background:var(--surface);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--surface-line);
+  border-radius:26px;
+  padding:clamp(26px,6vw,46px) clamp(18px,5vw,38px);
+  box-shadow:var(--shadow);
+  display:grid; gap:clamp(16px,4vw,26px); justify-items:center;
+}
+.month{font-size:clamp(15px,4.2vw,22px);letter-spacing:.5em;text-indent:.5em;color:var(--ink-soft)}
+.days{display:flex;align-items:center;justify-content:center;gap:clamp(8px,3.4vw,20px)}
+.days span{font-family:var(--f-display);font-size:clamp(22px,7vw,38px);color:var(--ink-soft);opacity:.5}
+.day-mark{position:relative;display:grid;place-items:center;width:clamp(58px,17vw,86px);aspect-ratio:1}
+.day-mark svg{position:absolute;inset:0;width:100%;height:100%;color:var(--accent)}
+.day-mark b{
+  position:relative;font-family:var(--f-display);font-weight:400;
+  font-size:clamp(28px,9vw,46px);color:var(--ink);opacity:1
+}
+.time{font-size:clamp(14px,4vw,19px);letter-spacing:.24em;color:var(--ink-soft)}
+.time b{font-weight:500;color:var(--ink);letter-spacing:.06em}
+.year{font-family:var(--f-display);font-size:clamp(40px,13vw,74px);line-height:1;color:var(--ink)}
+.weekdays{display:grid;gap:clamp(6px,1.6vw,10px);justify-items:center;width:100%}
+.weekdays span{font-size:clamp(11px,3vw,14px);letter-spacing:.4em;text-indent:.4em;color:var(--ink-soft);opacity:.55}
+.weekdays .on{
+  opacity:1;color:var(--ink);
+  border:1px solid var(--ink); border-radius:8px;
+  padding:10px clamp(16px,5vw,34px);
+}
+
+/* countdown */
+.countdown{display:flex;gap:clamp(8px,2.6vw,18px);justify-content:center;flex-wrap:wrap}
+.cd{
+  min-width:clamp(66px,19vw,92px);
+  padding:14px 8px; border-radius:16px;
+  background:color-mix(in srgb,var(--accent) 10%, transparent);
+  border:1px solid var(--surface-line);
+}
+.cd b{display:block;font-family:var(--f-display);font-size:clamp(24px,7vw,38px);line-height:1.1;color:var(--ink)}
+.cd i{font-style:normal;font-size:10px;letter-spacing:.24em;color:var(--ink-soft);text-transform:uppercase}
+
+/* ============ BUTTON ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px clamp(24px,6vw,38px);
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-600));
+  color:#fff; font-size:clamp(12px,3.4vw,14px);
+  letter-spacing:.2em; text-transform:uppercase; font-weight:600;
+  text-decoration:none;
+  box-shadow:0 16px 30px -14px rgba(36,91,143,.85);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease), filter .3s;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 22px 38px -14px rgba(36,91,143,.95);filter:brightness(1.06)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+
+/* ============ ADDRESS ============ */
+.address{font-size:clamp(14px,3.9vw,18px);letter-spacing:.1em;line-height:2;text-transform:uppercase;color:var(--ink)}
+
+/* ============ SIGNATURE / FOOTER ============ */
+.sign{font-family:var(--f-display);font-style:italic;font-size:clamp(24px,6.4vw,38px);color:var(--ink)}
+footer{
+  padding:clamp(36px,8vw,60px) 20px clamp(46px,10vw,72px);
+  text-align:center;background:var(--bg-2);
+}
+.foot-note{font-size:clamp(11px,3vw,13px);letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);opacity:.8}
+
+/* ============ FLOATING CONTROLS ============ */
+.dock{
+  position:fixed; z-index:60; left:0; right:0;
+  bottom:calc(14px + env(safe-area-inset-bottom));
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0 clamp(12px,4vw,24px); pointer-events:none;
+  opacity:0; transform:translateY(16px);
+  transition:opacity .6s var(--ease), transform .6s var(--ease);
+}
+.dock.is-visible{opacity:1;transform:none}
+.dock > *{pointer-events:auto}
+.pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 20px 10px 10px; border-radius:999px;
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-700));
+  color:#fff;font-size:clamp(12px,3.3vw,14px);font-weight:600;letter-spacing:.04em;
+  box-shadow:0 14px 28px -12px rgba(13,44,80,.9);
+  transition:transform .3s var(--ease),filter .3s;
+}
+.pill:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.pill__ico{
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,255,255,.16);flex:none;
+}
+.pill--icon{padding:10px;gap:0}
+.theme-toggle{
+  position:fixed;top:calc(14px + env(safe-area-inset-top));right:14px;z-index:60;
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--surface);border:1px solid var(--surface-line);color:var(--ink);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:var(--shadow);
+  opacity:0;transition:opacity .6s var(--ease),transform .3s var(--ease);
+}
+.theme-toggle.is-visible{opacity:1}
+.theme-toggle:hover{transform:scale(1.06)}
+.spin{animation:spin 3.2s linear infinite;animation-play-state:paused}
+.spin.on{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* language switch */
+.lang{
+  position:fixed; top:calc(14px + env(safe-area-inset-top)); left:14px; z-index:110;
+  display:flex; align-items:center; gap:2px; padding:4px;
+  border-radius:999px;
+  background:var(--surface); border:1px solid var(--surface-line);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  box-shadow:var(--shadow);
+}
+.lang.on-gate{background:rgba(255,255,255,.1);border-color:rgba(244,233,210,.28)}
+.lang button{
+  padding:7px 13px; border-radius:999px;
+  font-size:12px; font-weight:700; letter-spacing:.12em;
+  color:var(--ink-soft); transition:color .25s var(--ease), background .25s var(--ease);
+}
+.lang.on-gate button{color:rgba(244,233,210,.7)}
+.lang button[aria-pressed="true"]{
+  background:linear-gradient(135deg,var(--blue-500),var(--blue-600)); color:#fff;
+}
+.lang button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.lang__sep{width:1px;height:16px;background:var(--surface-line);flex:none}
+.lang.on-gate .lang__sep{background:rgba(244,233,210,.3)}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv:nth-child(2){transition-delay:.09s}
+.rv:nth-child(3){transition-delay:.18s}
+.rv:nth-child(4){transition-delay:.27s}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+@media print{.gate,.dock,.theme-toggle,.scroll-cue{display:none!important}.page{opacity:1!important}}
+</style>
+</head>
+
+<body class="locked">
+
+<!-- ======= LANGUAGE SWITCH ======= -->
+<div class="lang on-gate" id="lang" role="group" aria-label="Тіл / Язык">
+  <button type="button" data-lang="kk" aria-pressed="true">KZ</button>
+  <span class="lang__sep" aria-hidden="true"></span>
+  <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+</div>
+
+<!-- ======= GATE ======= -->
+<div class="gate" id="gate">
+  <div class="gate__inner">
+    <p class="gate__script" data-i18n="gate.script">Сіз шақыру алдыңыз.</p>
+    <p class="gate__kicker" data-i18n="gate.kicker">ҰЛ ТОЙ</p>
+    <button class="seal" id="openBtn" data-i18n-aria="gate.openAria" aria-label="Шақыруды ашу">
+      <span class="seal__label" data-i18n="gate.open">АШУ</span>
+    </button>
+    <p class="gate__hint" data-i18n="gate.hint">Шақыруды ашу үшін «АШУ» батырмасын басыңыз.</p>
+  </div>
+</div>
+
+<!-- ======= PAGE ======= -->
+<main class="page" id="page">
+
+  <button class="theme-toggle" id="themeBtn" data-i18n-aria="theme.aria" aria-label="Тақырыпты ауыстыру">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+      <path id="themeIcon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+    </svg>
+  </button>
+
+  <!-- HERO -->
+  <section class="hero sky" aria-labelledby="hero-title">
+    <div class="arch" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero__badge rv" aria-hidden="true">
+        <svg width="72" height="72" viewBox="0 0 64 64" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 6l4.9 10.6L48 18l-8 8.6L41.9 38 32 32.6 22.1 38 24 26.6 16 18l11.1-1.4z"/>
+          <path d="M14 46h36M18 52h28M22 58h20"/>
+        </svg>
+      </div>
+      <h1 class="script rv" id="hero-title">
+        <span class="names">
+          <span>Имран</span><span>Ақмаль</span><span>Әлинұр</span>
+        </span>
+      </h1>
+      <p class="eyebrow rv" data-i18n="hero.eyebrow">ҰЛ ТОЙ</p>
+      <div class="orn rv" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <path d="M12 2l2.6 6.8L21.4 12l-6.8 3.2L12 22l-2.6-6.8L2.6 12l6.8-3.2z"/>
+        </svg>
+      </div>
+      <div class="scroll-cue rv" aria-hidden="true">
+        <span data-i18n="hero.scroll">ТӨМЕН</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="true"></div>
+
+  <!-- GREETING -->
+  <section class="sky" aria-labelledby="greet-title">
+    <div class="arch" aria-hidden="true"></div>
+    <div class="wrap" style="display:grid;gap:clamp(18px,5vw,30px);justify-items:center">
+      <h2 class="h2 rv" id="greet-title" data-i18n="greet.title">Құрметті ағайын-туыс, дос-жаран!</h2>
+      <div class="orn rv" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l9 9-9 9-9-9z"/><path d="M12 7.5 16.5 12 12 16.5 7.5 12z"/></svg>
+      </div>
+      <p class="body-text rv" data-i18n="greet.p1">
+        Сіздерді ұлдарымыз Имран, Ақмаль мен Әлинұрдың құрметіне арналған
+        ұл тойымыздың қадірлі қонағы болуға шақырамыз!
+      </p>
+      <p class="body-text rv" style="opacity:.85" data-i18n="greet.p2">
+        Осы қуанышты сәтті бірге бөлісіп, шаңырағымызға шаттық сыйласаңыздар,
+        қуанышымыз еселене түсер еді.
+      </p>
+    </div>
+  </section>
+
+  <!-- DATE -->
+  <section class="sky" aria-labelledby="date-title">
+    <div class="arch" aria-hidden="true"></div>
+    <div class="wrap" style="display:grid;gap:clamp(22px,6vw,36px);justify-items:center">
+      <h2 class="h2 rv" id="date-title" data-i18n="date.title">Тойдың уақыты</h2>
+
+      <div class="card rv">
+        <p class="month" data-i18n="date.month">ҚЫРКҮЙЕК</p>
+
+        <div class="days" role="img" data-i18n-aria="date.dayAria" aria-label="24 қыркүйек">
+          <span aria-hidden="true">22</span>
+          <span aria-hidden="true">23</span>
+          <span class="day-mark">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="50" cy="50" r="40"/>
+              <path d="M50 14l3.4 8.6L62 26l-8.6 3.4L50 38l-3.4-8.6L38 26l8.6-3.4z" stroke-width="1.2"/>
+            </svg>
+            <b>24</b>
+          </span>
+          <span aria-hidden="true">25</span>
+          <span aria-hidden="true">26</span>
+        </div>
+
+        <p class="time"><span data-i18n="date.at">сағат</span> <b>13:00</b></p>
+        <p class="year">2026</p>
+
+        <div class="weekdays" aria-hidden="true">
+          <span data-i18n="wd.mon">ДҮЙСЕНБІ</span>
+          <span data-i18n="wd.tue">СЕЙСЕНБІ</span>
+          <span data-i18n="wd.wed">СӘРСЕНБІ</span>
+          <span class="on" data-i18n="wd.thu">БЕЙСЕНБІ</span>
+          <span data-i18n="wd.fri">ЖҰМА</span>
+          <span data-i18n="wd.sat">СЕНБІ</span>
+          <span data-i18n="wd.sun">ЖЕКСЕНБІ</span>
+        </div>
+      </div>
+
+      <div class="countdown rv" id="countdown" aria-live="polite" data-i18n-aria="cd.aria" aria-label="Тойға дейінгі уақыт">
+        <div class="cd"><b id="cd-d">—</b><i data-i18n="cd.days">күн</i></div>
+        <div class="cd"><b id="cd-h">—</b><i data-i18n="cd.hours">сағат</i></div>
+        <div class="cd"><b id="cd-m">—</b><i data-i18n="cd.min">минут</i></div>
+        <div class="cd"><b id="cd-s">—</b><i data-i18n="cd.sec">секунд</i></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="true"></div>
+
+  <!-- LOCATION -->
+  <section class="sky" aria-labelledby="loc-title">
+    <div class="arch" aria-hidden="true"></div>
+    <div class="wrap" style="display:grid;gap:clamp(18px,5vw,30px);justify-items:center">
+      <svg class="rv" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M32 58s18-14.4 18-27a18 18 0 1 0-36 0c0 12.6 18 27 18 27Z"/>
+        <circle cx="32" cy="30" r="7"/>
+      </svg>
+      <h2 class="h2 rv" id="loc-title" data-i18n="loc.title">Мекенжайы:</h2>
+      <p class="address rv" data-i18n-html="loc.address">
+        Янгиюль қаласы,<br>
+        Ташкент шоқ көшесі,<br>
+        «Shohona» мейрамханасы
+      </p>
+      <a class="btn rv" id="mapLink"
+         href="https://yandex.com/maps/org/shohona/90242348849"
+         target="_blank" rel="noopener noreferrer">
+        <span data-i18n="loc.btn">Картадан ашу</span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- SIGNATURE -->
+  <section class="sky" aria-labelledby="sign-title">
+    <div class="arch" aria-hidden="true"></div>
+    <div class="wrap" style="display:grid;gap:clamp(16px,4vw,26px);justify-items:center">
+      <div class="orn rv" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2l2.6 6.8L21.4 12l-6.8 3.2L12 22l-2.6-6.8L2.6 12l6.8-3.2z"/></svg>
+      </div>
+      <p class="eyebrow rv" id="sign-title" data-i18n="sign.eyebrow">ҚҰРМЕТПЕН</p>
+      <p class="sign rv" data-i18n="sign.family">Ұмбетов отбасысы</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="band" style="margin-bottom:clamp(28px,7vw,48px)" aria-hidden="true"></div>
+    <p class="foot-note" data-i18n="foot.note">Қуанышымызды бірге бөліскеніңізге алғыс айтамыз</p>
+    <p class="foot-note" style="margin-top:10px;opacity:.55">Имран · Ақмаль · Әлинұр — 2026</p>
+  </footer>
+</main>
+
+<!-- ======= DOCK ======= -->
+<div class="dock" id="dock">
+  <button class="pill" id="musicBtn" aria-pressed="false">
+    <span class="pill__ico" id="musicIco">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+    </span>
+    <span id="musicText">Әуен қосу</span>
+  </button>
+
+  <a class="pill" href="https://yandex.com/maps/org/shohona/90242348849"
+     target="_blank" rel="noopener noreferrer">
+    <span class="pill__ico">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 21s7-5.6 7-10.5a7 7 0 1 0-14 0C5 15.4 12 21 12 21Z"/><circle cx="12" cy="10.5" r="2.6"/>
+      </svg>
+    </span>
+    <span data-i18n="dock.map">Мекенжай</span>
+  </a>
+</div>
+
+<audio id="audio" loop preload="none" src="music.mp3"></audio>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- I18N ---- */
+  var I18N = {
+    kk:{
+      "doc.title":"Ұл тойға шақыру — Имран, Ақмаль, Әлинұр",
+      "gate.script":"Сіз шақыру алдыңыз.",
+      "gate.kicker":"ҰЛ ТОЙ",
+      "gate.open":"АШУ",
+      "gate.openAria":"Шақыруды ашу",
+      "gate.hint":"Шақыруды ашу үшін «АШУ» батырмасын басыңыз.",
+      "theme.aria":"Тақырыпты ауыстыру",
+      "hero.eyebrow":"ҰЛ ТОЙ",
+      "hero.scroll":"ТӨМЕН",
+      "greet.title":"Құрметті ағайын-туыс, дос-жаран!",
+      "greet.p1":"Сіздерді ұлдарымыз Имран, Ақмаль мен Әлинұрдың құрметіне арналған ұл тойымыздың қадірлі қонағы болуға шақырамыз!",
+      "greet.p2":"Осы қуанышты сәтті бірге бөлісіп, шаңырағымызға шаттық сыйласаңыздар, қуанышымыз еселене түсер еді.",
+      "date.title":"Тойдың уақыты",
+      "date.month":"ҚЫРКҮЙЕК",
+      "date.at":"сағат",
+      "date.dayAria":"24 қыркүйек",
+      "wd.mon":"ДҮЙСЕНБІ","wd.tue":"СЕЙСЕНБІ","wd.wed":"СӘРСЕНБІ","wd.thu":"БЕЙСЕНБІ",
+      "wd.fri":"ЖҰМА","wd.sat":"СЕНБІ","wd.sun":"ЖЕКСЕНБІ",
+      "cd.aria":"Тойға дейінгі уақыт",
+      "cd.days":"күн","cd.hours":"сағат","cd.min":"минут","cd.sec":"секунд",
+      "cd.done":"Той басталды!",
+      "loc.title":"Мекенжайы:",
+      "loc.address":"Янгиюль қаласы,<br>Ташкент шоқ көшесі,<br>«Shohona» мейрамханасы",
+      "loc.btn":"Картадан ашу",
+      "dock.map":"Мекенжай",
+      "music.play":"Әуен қосу",
+      "music.pause":"Әуенді тоқтату",
+      "sign.eyebrow":"ҚҰРМЕТПЕН",
+      "sign.family":"Ұмбетов отбасысы",
+      "foot.note":"Қуанышымызды бірге бөліскеніңізге алғыс айтамыз"
+    },
+    ru:{
+      "doc.title":"Приглашение на ул той — Имран, Акмаль, Алинур",
+      "gate.script":"Вы получили приглашение.",
+      "gate.kicker":"УЛ ТОЙ",
+      "gate.open":"ОТКРЫТЬ",
+      "gate.openAria":"Открыть приглашение",
+      "gate.hint":"Нажмите кнопку «ОТКРЫТЬ», чтобы открыть приглашение.",
+      "theme.aria":"Сменить тему",
+      "hero.eyebrow":"УЛ ТОЙ",
+      "hero.scroll":"ВНИЗ",
+      "greet.title":"Дорогие родственники, друзья и близкие!",
+      "greet.p1":"Приглашаем вас стать почётными гостями нашего торжества «Ул той», посвящённого нашим сыновьям Имрану, Акмалю и Алинуру!",
+      "greet.p2":"Разделите с нами эту радость — ваше присутствие сделает наш праздник по-настоящему незабываемым.",
+      "date.title":"Время торжества",
+      "date.month":"СЕНТЯБРЬ",
+      "date.at":"время",
+      "date.dayAria":"24 сентября",
+      "wd.mon":"ПОНЕДЕЛЬНИК","wd.tue":"ВТОРНИК","wd.wed":"СРЕДА","wd.thu":"ЧЕТВЕРГ",
+      "wd.fri":"ПЯТНИЦА","wd.sat":"СУББОТА","wd.sun":"ВОСКРЕСЕНЬЕ",
+      "cd.aria":"Времени до торжества",
+      "cd.days":"дней","cd.hours":"часов","cd.min":"минут","cd.sec":"секунд",
+      "cd.done":"Торжество началось!",
+      "loc.title":"Адрес:",
+      "loc.address":"город Янгиюль,<br>улица Ташкент шох,<br>ресторан «Shohona»",
+      "loc.btn":"Открыть на карте",
+      "dock.map":"Адрес",
+      "music.play":"Включить музыку",
+      "music.pause":"Остановить музыку",
+      "sign.eyebrow":"С УВАЖЕНИЕМ",
+      "sign.family":"Семья Умбетовых",
+      "foot.note":"Благодарим, что разделите с нами нашу радость"
+    }
+  };
+
+  var lang = 'kk';
+  function t(key){ return (I18N[lang] && I18N[lang][key]) || I18N.kk[key] || ''; }
+
+  function applyLang(next){
+    lang = I18N[next] ? next : 'kk';
+    document.documentElement.lang = lang === 'ru' ? 'ru' : 'kk';
+    document.title = t('doc.title');
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      el.textContent = t(el.getAttribute('data-i18n'));
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      el.innerHTML = t(el.getAttribute('data-i18n-html'));
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+      el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria')));
+    });
+
+    document.querySelectorAll('#lang button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+
+    if(typeof syncMusicLabel === 'function') syncMusicLabel();
+    try { localStorage.setItem('inv-lang', lang); } catch(e){}
+  }
+
+  var langBox = document.getElementById('lang');
+  langBox.addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-lang]');
+    if(btn) applyLang(btn.getAttribute('data-lang'));
+  });
+
+  /* ---- GATE ---- */
+  var gate = document.getElementById('gate');
+  var page = document.getElementById('page');
+  var dock = document.getElementById('dock');
+  var themeBtn = document.getElementById('themeBtn');
+
+  function openInvitation(){
+    gate.classList.add('is-open');
+    langBox.classList.remove('on-gate');
+    page.classList.add('is-visible');
+    document.body.classList.remove('locked');
+    setTimeout(function(){
+      dock.classList.add('is-visible');
+      themeBtn.classList.add('is-visible');
+      gate.remove();
+    }, 900);
+    tryPlay(true);
+    reveal();
+  }
+  document.getElementById('openBtn').addEventListener('click', openInvitation);
+
+  /* ---- REVEAL ON SCROLL ---- */
+  var items = document.querySelectorAll('.rv');
+  function reveal(){
+    if(!('IntersectionObserver' in window)){
+      items.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold:.16, rootMargin:'0px 0px -8% 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---- COUNTDOWN ---- */
+  var target = new Date(2026, 8, 24, 13, 0, 0).getTime(); // 24.09.2026 13:00
+  var pad = function(n){ return n < 10 ? '0' + n : '' + n; };
+  var els = { d:document.getElementById('cd-d'), h:document.getElementById('cd-h'),
+              m:document.getElementById('cd-m'), s:document.getElementById('cd-s') };
+  function tick(){
+    var diff = target - Date.now();
+    if(diff <= 0){
+      document.getElementById('countdown').innerHTML =
+        '<div class="cd" style="min-width:auto;padding:14px 26px"><b data-i18n="cd.done">' + t('cd.done') + '</b></div>';
+      clearInterval(timer); return;
+    }
+    var s = Math.floor(diff/1000);
+    els.d.textContent = Math.floor(s/86400);
+    els.h.textContent = pad(Math.floor(s%86400/3600));
+    els.m.textContent = pad(Math.floor(s%3600/60));
+    els.s.textContent = pad(s%60);
+  }
+  var timer = setInterval(tick, 1000); tick();
+
+  /* ---- MUSIC ---- */
+  var audio = document.getElementById('audio');
+  var musicBtn = document.getElementById('musicBtn');
+  var musicIco = document.getElementById('musicIco');
+  var musicText = document.getElementById('musicText');
+  var PLAY = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+  var PAUSE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="3.4" height="14" rx="1"/><rect x="13.6" y="5" width="3.4" height="14" rx="1"/></svg>';
+
+  var playing = false;
+  function setState(on){
+    playing = on;
+    musicIco.innerHTML = on ? PAUSE : PLAY;
+    musicBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    syncMusicLabel();
+  }
+  function syncMusicLabel(){
+    musicText.textContent = playing ? t('music.pause') : t('music.play');
+  }
+  audio.volume = 0.55;
+  function tryPlay(silentFail){
+    var p = audio.play();
+    if(p && p.then){ p.then(function(){ setState(true); })
+                      .catch(function(){ if(!silentFail) setState(false); }); }
+  }
+  musicBtn.addEventListener('click', function(){
+    if(audio.paused){ tryPlay(false); } else { audio.pause(); setState(false); }
+  });
+  audio.addEventListener('error', function(){ musicBtn.style.display = 'none'; });
+
+  /* ---- THEME ---- */
+  var icon = document.getElementById('themeIcon');
+  var MOON = 'M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z';
+  var SUN  = 'M12 4v2m0 12v2M4 12h2m12 0h2M6.3 6.3l1.4 1.4m8.6 8.6 1.4 1.4m0-11.4-1.4 1.4M7.7 16.3l-1.4 1.4M12 8.5A3.5 3.5 0 1 1 12 15.5 3.5 3.5 0 0 1 12 8.5Z';
+  var saved = null;
+  try { saved = localStorage.getItem('inv-theme'); } catch(e){}
+  function applyTheme(t){
+    if(t){ document.documentElement.setAttribute('data-theme', t); }
+    var dark = t ? t === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    icon.setAttribute('d', dark ? SUN : MOON);
+  }
+  applyTheme(saved);
+  themeBtn.addEventListener('click', function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    if(!cur){ cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    var next = cur === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('inv-theme', next); } catch(e){}
+  });
+
+  /* ---- INIT LANGUAGE ---- */
+  var savedLang = null;
+  try { savedLang = localStorage.getItem('inv-lang'); } catch(e){}
+  if(!savedLang){
+    savedLang = /^ru\b/i.test(navigator.language || '') ? 'ru' : 'kk';
+  }
+  applyLang(savedLang);
+})();
+</script>
+</body>
+</html>
