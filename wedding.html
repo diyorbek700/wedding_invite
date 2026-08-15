@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ұл тойға шақыру - Имран, Ақмаль мен Әлинұрдың құрметіне арналған ұл тойы">
+    <meta name="theme-color" content="#1a1a1a">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Ұл тойға шақыру">
+    <meta property="og:description" content="Сіздерді ұлдарымыздың құрметіне арналған ұл тойымыздың қадірлі қонағы болуға шақырамыз!">
+    <meta property="og:type" content="event">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect fill='%23d4af37' width='1200' height='630'/%3E%3Ctext x='600' y='315' font-size='48' text-anchor='middle' fill='%231a1a1a' font-family='serif'%3EҰл тойға шақыру%3C/text%3E%3C/svg%3E">
+    
+    <title>Ұл тойға шақыру | Tusau Kesew Celebration</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gold: #d4af37;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f9f7f4;
+            --text-dark: #2d2d2d;
+            --text-light: #f9f7f4;
+            --accent-brown: #8b6f47;
+            --accent-cream: #ede4d3;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #1a1a1a;
+                --bg-secondary: #2d2d2d;
+                --text-primary: #f9f7f4;
+                --text-secondary: #d4af37;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-primary: #f9f7f4;
+                --bg-secondary: #ede4d3;
+                --text-primary: #2d2d2d;
+                --text-secondary: #8b6f47;
+            }
+        }
+
+        body {
+            font-family: 'Georgia', 'Noto Serif', serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: var(--light-bg);
+                color: var(--text-dark);
+            }
+        }
+
+        /* Pattern Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212, 175, 55, 0.03) 35px, rgba(212, 175, 55, 0.03) 70px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(139, 111, 71, 0.95) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-gold);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @media (prefers-color-scheme: light) {
+            header {
+                background: linear-gradient(135deg, rgba(237, 228, 211, 0.98) 0%, rgba(212, 175, 55, 0.15) 100%);
+                border-bottom: 3px solid var(--primary-gold);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--accent-cream);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            header {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Greeting Section */
+        .greeting {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .greeting h2 {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .greeting p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .greeting p {
+                color: var(--text-dark);
+            }
+        }
+
+        /* Decorative Divider */
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+            margin: 2rem auto;
+        }
+
+        /* Event Details Box */
+        .event-details {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(139, 111, 71, 0.1) 100%);
+            border: 2px solid var(--primary-gold);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-details::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,20 L80,20 L80,80 L20,80 Z' stroke='%23d4af37' stroke-width='0.5' fill='none' opacity='0.1'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .event-details > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .event-details {
+                background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(237, 228, 211, 0.8) 100%);
+            }
+        }
+
+        .detail-item {
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .detail-icon {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            flex-shrink: 0;
+            min-width: 2rem;
+        }
+
+        .detail-content h3 {
+            font-size: 1rem;
+            color: var(--accent-cream);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .detail-content h3 {
+                color: var(--accent-brown);
+            }
+        }
+
+        .detail-content p {
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            font-weight: 500;
+        }
+
+        .detail-content .secondary {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-top: 0.2rem;
+            font-weight: 400;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .detail-content .secondary {
+                color: var(--text-dark);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .event-details {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .detail-item {
+                gap: 1rem;
+                margin: 1rem 0;
+            }
+
+            .detail-icon {
+                font-size: 1.5rem;
+            }
+
+            .detail-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Message Section */
+        .message {
+            background: rgba(212, 175, 55, 0.08);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-gold);
+            margin: 3rem 0;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .message {
+                background: rgba(212, 175, 55, 0.06);
+            }
+        }
+
+        .message p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            font-style: italic;
+            color: var(--accent-cream);
+        }
+
+        @media (prefers-color-scheme: light) {
+            .message p {
+                color: var(--accent-brown);
+            }
+        }
+
+        /* Signature Section */
+        .signature {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .signature-text {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .signature-text {
+                color: var(--text-dark);
+            }
+        }
+
+        .signature-name {
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--accent-cream);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            margin-top: 3rem;
+        }
+
+        @media (prefers-color-scheme: light) {
+            footer {
+                color: var(--accent-brown);
+                border-top: 1px solid rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: var(--primary-gold);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .greeting h2 {
+                font-size: 1.5rem;
+            }
+
+            .greeting p {
+                font-size: 1rem;
+            }
+
+            .message {
+                padding: 1.5rem;
+            }
+
+            .message p {
+                font-size: 1rem;
+            }
+
+            .signature {
+                margin-top: 2rem;
+                padding-top: 1.5rem;
+            }
+        }
+
+        /* Ornamental Corner */
+        .corner-ornament {
+            position: fixed;
+            width: 120px;
+            height: 120px;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .corner-ornament.top-left {
+            top: 0;
+            left: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M10,10 L90,10 L90,90 L10,90 Z M20,20 L80,20 L80,80 L20,80 Z' stroke='%23d4af37' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+        }
+
+        .corner-ornament.bottom-right {
+            bottom: 0;
+            right: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M10,10 L90,10 L90,90 L10,90 Z M20,20 L80,20 L80,80 L20,80 Z' stroke='%23d4af37' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+            transform: rotate(180deg);
+        }
+
+        /* Print Styles */
+        @media print {
+            body::before {
+                display: none;
+            }
+
+            .corner-ornament {
+                display: none;
+            }
+
+            header {
+                border-bottom: none;
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="corner-ornament top-left"></div>
+    <div class="corner-ornament bottom-right"></div>
+
+    <main>
+        <header>
+            <div class="header-icon">🎉</div>
+            <h1>Ұл тойға шақыру</h1>
+            <p class="subtitle">Tusau Kesew Celebration</p>
+        </header>
+
+        <div class="container">
+            <!-- Greeting Section -->
+            <section class="greeting">
+                <h2>Құрметті ағайын-туыс, дос-жаран!</h2>
+                <div class="divider"></div>
+            </section>
+
+            <!-- Welcome Message -->
+            <section class="message">
+                <p>Сіздерді ұлдарымыз Имран, Ақмаль мен Әлинұрдың құрметіне арналған ұл тойымыздың қадірлі қонағы болуға шақырамыз!</p>
+            </section>
+
+            <!-- Event Details -->
+            <section class="event-details">
+                <div class="detail-item">
+                    <div class="detail-icon">📅</div>
+                    <div class="detail-content">
+                        <h3>Салтанатты ауысу</h3>
+                        <p>24 қыркүйек</p>
+                        <p class="secondary">Бейсенбі | Thursday</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-icon">📍</div>
+                    <div class="detail-content">
+                        <h3>Орналасуы</h3>
+                        <p>"Shohona" ресторанда</p>
+                        <p class="secondary">Янгиүл қ., Ташкент Шохи көшесі</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-icon">👨‍👧‍👦</div>
+                    <div class="detail-content">
+                        <h3>Іс-қимас атағы</h3>
+                        <p>Ұлдарымыздың ұл тойы</p>
+                        <p class="secondary">Имран, Ақмаль және Әлинұр</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Signature Section -->
+            <section class="signature">
+                <p class="signature-text">Құрметпен,</p>
+                <p class="signature-name">Ұмбетов отбасысы</p>
+                <p class="signature-text" style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--accent-cream);">Янгиүл қаласы | Ташкент облысы</p>
+            </section>
+        </div>
+
+        <footer>
+            <p class="tagline">"Ұл тойы — ұлы мерекесі"</p>
+            <p>Boy's Celebration — The Greatest Ceremony</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.8;">© 2026 | Tusau Kesew Invitation</p>
+        </footer>
+    </main>
+
+    <script>
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Optimize for performance
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                document.querySelectorAll('.greeting, .message, .event-details, .signature').forEach(el => {
+                    observer.observe(el);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
