@@ -211,9 +211,6 @@ section{
 .hero{min-height:100svh;display:grid;align-items:center}
 .hero .wrap{display:grid;gap:clamp(18px,4vh,34px);justify-items:center}
 /* ---- мальчик ---- */
-.boy{width:clamp(150px,42vw,224px);margin-inline:auto;filter:drop-shadow(0 18px 26px rgba(13,44,80,.22));animation:float 5.5s ease-in-out infinite}
-.boy svg{width:100%;height:auto}
-
 /* ---- декор hero ---- */
 .deco{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
 .deco > svg{position:absolute}
@@ -380,7 +377,6 @@ footer{
   .hero .wrap{padding-top:56px}
 
   .script{font-size:clamp(38px,13vw,60px);line-height:1.12}
-  .boy{width:clamp(140px,44vw,190px)}
   .d-balloon--l{top:15%;left:1%}
   .d-balloon--r{top:9%;right:1%}
   .d-star--1{left:8%}
@@ -434,7 +430,6 @@ footer{
 /* телефон в альбомной ориентации — hero не должен требовать скролла */
 @media (max-height:520px) and (orientation:landscape){
   .hero{min-height:auto;padding:88px 20px 56px}
-  .boy{width:120px}
   .d-car,.d-balloon{display:none}
   .scroll-cue{display:none}
   .seal{width:132px}
@@ -526,52 +521,6 @@ footer{
     </div>
 
     <div class="wrap">
-      <!-- казахский мальчик в тюбетейке -->
-      <div class="boy rv" aria-hidden="true">
-        <svg viewBox="0 0 200 250">
-          <ellipse cx="100" cy="238" rx="56" ry="9" fill="#245b8f" opacity=".14"/>
-
-          <!-- ноги и сапожки -->
-          <path d="M84 196h13v34H84zM103 196h13v34h-13z" fill="#1b3a5c"/>
-          <path d="M78 226h22c3 0 5 2 5 5v6H78a5 5 0 0 1-5-5v-1c0-3 2-5 5-5zM122 226h-22c-3 0-5 2-5 5v6h27a5 5 0 0 0 5-5v-1c0-3-2-5-5-5z" fill="#12263f"/>
-
-          <!-- чапан -->
-          <path d="M100 92c22 0 38 12 42 32l10 46c1 6-3 11-9 11H57c-6 0-10-5-9-11l10-46c4-20 20-32 42-32z" fill="#2f7ec4"/>
-          <path d="M100 92c6 0 11 1 16 3l-16 22-16-22c5-2 10-3 16-3z" fill="#cfe6f8"/>
-          <path d="M100 117v64" stroke="#245b8f" stroke-width="3"/>
-          <!-- золотая отделка и пояс -->
-          <path d="M84 95 100 117 116 95" fill="none" stroke="#c9a227" stroke-width="4" stroke-linejoin="round"/>
-          <rect x="62" y="150" width="76" height="14" rx="7" fill="#c9a227"/>
-          <path d="M92 157h16M100 151v12" stroke="#8a6c14" stroke-width="2"/>
-          <!-- орнамент на подоле -->
-          <path d="M60 178h80M64 186h72" stroke="#c9a227" stroke-width="2.5" opacity=".85"/>
-
-          <!-- руки -->
-          <path d="M58 124c-8 8-12 20-12 32 0 5 3 8 8 8s8-3 8-8c0-8 3-16 8-21z" fill="#2f7ec4"/>
-          <path d="M142 124c8 8 12 20 12 32 0 5-3 8-8 8s-8-3-8-8c0-8-3-16-8-21z" fill="#2f7ec4"/>
-          <circle cx="52" cy="166" r="9" fill="#f3cfae"/><circle cx="148" cy="166" r="9" fill="#f3cfae"/>
-
-          <!-- шея и лицо -->
-          <path d="M92 78h16v20H92z" fill="#eabf99"/>
-          <ellipse cx="100" cy="58" rx="34" ry="36" fill="#f7d7b8"/>
-          <ellipse cx="70" cy="62" rx="6" ry="8" fill="#f7d7b8"/><ellipse cx="130" cy="62" rx="6" ry="8" fill="#f7d7b8"/>
-          <!-- волосы -->
-          <path d="M100 22c19 0 33 12 34 28-6-4-14-6-20-11-8 7-24 12-48 11 2-16 15-28 34-28z" fill="#2b1c14"/>
-          <!-- глаза, брови, улыбка -->
-          <path d="M80 52c3-3 9-3 12 0M108 52c3-3 9-3 12 0" stroke="#2b1c14" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <ellipse cx="86" cy="62" rx="4.4" ry="5" fill="#2b1c14"/><ellipse cx="114" cy="62" rx="4.4" ry="5" fill="#2b1c14"/>
-          <circle cx="87.6" cy="60.4" r="1.6" fill="#fff"/><circle cx="115.6" cy="60.4" r="1.6" fill="#fff"/>
-          <ellipse cx="78" cy="72" rx="6" ry="4" fill="#f0a48f" opacity=".55"/>
-          <ellipse cx="122" cy="72" rx="6" ry="4" fill="#f0a48f" opacity=".55"/>
-          <path d="M92 76c4 4 12 4 16 0" stroke="#b9755a" stroke-width="3" stroke-linecap="round" fill="none"/>
-
-          <!-- тюбетейка (тақия) с пером -->
-          <path d="M100 4c20 0 35 14 36 30H64C65 18 80 4 100 4Z" fill="#1b3a5c"/>
-          <rect x="62" y="30" width="76" height="12" rx="6" fill="#245b8f"/>
-          <path d="M70 36h60M76 24l6 6-6 6M124 24l-6 6 6 6M100 18l5 6-5 6-5-6z" stroke="#c9a227" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
-          <path d="M100 4c-2-10 6-14 12-12-6 3-8 7-6 12z" fill="#f2e2b0"/>
-        </svg>
-      </div>
 
       <h1 class="script rv" id="hero-title">
         <span class="names">
@@ -585,7 +534,7 @@ footer{
         </svg>
       </div>
       <div class="scroll-cue rv" aria-hidden="true">
-        <span data-i18n="hero.scroll">ТӨМЕН</span>
+        <span data-i18n="hero.scroll">ТӨМЕН ҚАРАЙ</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
       </div>
     </div>
@@ -606,7 +555,7 @@ footer{
         ұл тойымыздың қадірлі қонағы болуға шақырамыз!
       </p>
       <p class="body-text rv" style="opacity:.85" data-i18n="greet.p2">
-        Осы қуанышты сәтті бірге бөлісіп, шаңырағымызға шаттық сыйласаңыздар,
+        Осы қуанышты сәтті бізбен бірге бөлісіп, шаңырағымызға шаттық сыйласаңыздар,
         қуанышымыз еселене түсер еді.
       </p>
     </div>
@@ -616,7 +565,7 @@ footer{
   <section class="sky" aria-labelledby="date-title">
     <div class="arch" aria-hidden="true"></div>
     <div class="wrap" style="display:grid;gap:clamp(22px,6vw,36px);justify-items:center">
-      <h2 class="h2 rv" id="date-title" data-i18n="date.title">Тойдың уақыты</h2>
+      <h2 class="h2 rv" id="date-title" data-i18n="date.title">Той басталатын уақыт</h2>
 
       <div class="card rv">
         <p class="month" data-i18n="date.month">ҚЫРКҮЙЕК</p>
@@ -661,16 +610,16 @@ footer{
         <path d="M32 58s18-14.4 18-27a18 18 0 1 0-36 0c0 12.6 18 27 18 27Z"/>
         <circle cx="32" cy="30" r="7"/>
       </svg>
-      <h2 class="h2 rv" id="loc-title" data-i18n="loc.title">Мекенжайы:</h2>
+      <h2 class="h2 rv" id="loc-title" data-i18n="loc.title">Той өтетін мекенжай:</h2>
       <p class="address rv" data-i18n-html="loc.address">
         Янгиюль қаласы,<br>
-        Ташкент шоқ көшесі,<br>
+        Ташкент шоһ көшесі,<br>
         «Shohona» мейрамханасы
       </p>
       <a class="btn rv" id="mapLink"
          href="https://yandex.com/maps/org/shohona/90242348849"
          target="_blank" rel="noopener noreferrer">
-        <span data-i18n="loc.btn">Картадан ашу</span>
+        <span data-i18n="loc.btn">Картадан қарау</span>
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>
         </svg>
@@ -686,13 +635,13 @@ footer{
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2l2.6 6.8L21.4 12l-6.8 3.2L12 22l-2.6-6.8L2.6 12l6.8-3.2z"/></svg>
       </div>
       <p class="eyebrow rv" id="sign-title" data-i18n="sign.eyebrow">ҚҰРМЕТПЕН</p>
-      <p class="sign rv" data-i18n="sign.family">Ұмбетов отбасысы</p>
+      <p class="sign rv" data-i18n="sign.family">Ұмбетовтар отбасы</p>
     </div>
   </section>
 
   <footer>
     <div class="band" style="margin-bottom:clamp(28px,7vw,48px)" aria-hidden="true"></div>
-    <p class="foot-note" data-i18n="foot.note">Қуанышымызды бірге бөліскеніңізге алғыс айтамыз</p>
+    <p class="foot-note" data-i18n="foot.note">Қуанышымызды бірге бөліскеніңіз үшін алғыс айтамыз</p>
     <p class="foot-note" style="margin-top:10px;opacity:.55" data-i18n="foot.names">Имран · Ақмаль · Әлинұр — 2026</p>
   </footer>
 </main>
@@ -725,27 +674,27 @@ footer{
       "gate.open":"АШУ",
       "gate.openAria":"Шақыруды ашу",
       "gate.hint":"Шақыруды ашу үшін «АШУ» батырмасын басыңыз.",
-      "theme.aria":"Тақырыпты ауыстыру",
+      "theme.aria":"Жарық және қараңғы режимді ауыстыру",
       "hero.eyebrow":"ҰЛ ТОЙ",
-      "hero.scroll":"ТӨМЕН",
+      "hero.scroll":"ТӨМЕН ҚАРАЙ",
       "name.1":"Имран","name.2":"Ақмаль","name.3":"Әлинұр",
       "foot.names":"Имран · Ақмаль · Әлинұр — 2026",
       "greet.title":"Құрметті ағайын-туыс, дос-жаран!",
       "greet.p1":"Сіздерді ұлдарымыз Имран, Ақмаль мен Әлинұрдың құрметіне арналған ұл тойымыздың қадірлі қонағы болуға шақырамыз!",
-      "greet.p2":"Осы қуанышты сәтті бірге бөлісіп, шаңырағымызға шаттық сыйласаңыздар, қуанышымыз еселене түсер еді.",
-      "date.title":"Тойдың уақыты",
+      "greet.p2":"Осы қуанышты сәтті бізбен бірге бөлісіп, шаңырағымызға шаттық сыйласаңыздар, қуанышымыз еселене түсер еді.",
+      "date.title":"Той басталатын уақыт",
       "date.month":"ҚЫРКҮЙЕК",
       "date.at":"сағат",
       "date.dayAria":"24 қыркүйек",
       "wd.mon":"ДҮЙСЕНБІ","wd.tue":"СЕЙСЕНБІ","wd.wed":"СӘРСЕНБІ","wd.thu":"БЕЙСЕНБІ",
       "wd.fri":"ЖҰМА","wd.sat":"СЕНБІ","wd.sun":"ЖЕКСЕНБІ",
-      "loc.title":"Мекенжайы:",
-      "loc.address":"Янгиюль қаласы,<br>Ташкент шоқ көшесі,<br>«Shohona» мейрамханасы",
-      "loc.btn":"Картадан ашу",
+      "loc.title":"Той өтетін мекенжай:",
+      "loc.address":"Янгиюль қаласы,<br>Ташкент шоһ көшесі,<br>«Shohona» мейрамханасы",
+      "loc.btn":"Картадан қарау",
       "dock.map":"Мекенжай",
       "sign.eyebrow":"ҚҰРМЕТПЕН",
-      "sign.family":"Ұмбетов отбасысы",
-      "foot.note":"Қуанышымызды бірге бөліскеніңізге алғыс айтамыз"
+      "sign.family":"Ұмбетовтар отбасы",
+      "foot.note":"Қуанышымызды бірге бөліскеніңіз үшін алғыс айтамыз"
     },
     ru:{
       "doc.title":"Приглашение на ул той — Имран, Акмаль, Алинур",
