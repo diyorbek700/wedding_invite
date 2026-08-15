@@ -253,17 +253,6 @@ section{
   padding:10px clamp(16px,5vw,34px);
 }
 
-/* countdown */
-.countdown{display:flex;gap:clamp(8px,2.6vw,18px);justify-content:center;flex-wrap:wrap}
-.cd{
-  min-width:clamp(66px,19vw,92px);
-  padding:14px 8px; border-radius:16px;
-  background:color-mix(in srgb,var(--accent) 10%, transparent);
-  border:1px solid var(--surface-line);
-}
-.cd b{display:block;font-family:var(--f-display);font-size:clamp(24px,7vw,38px);line-height:1.1;color:var(--ink)}
-.cd i{font-style:normal;font-size:10px;letter-spacing:.24em;color:var(--ink-soft);text-transform:uppercase}
-
 /* ============ BUTTON ============ */
 .btn{
   display:inline-flex;align-items:center;gap:10px;
@@ -295,7 +284,7 @@ footer{
 .dock{
   position:fixed; z-index:60; left:0; right:0;
   bottom:calc(14px + env(safe-area-inset-bottom));
-  display:flex; justify-content:space-between; align-items:center;
+  display:flex; justify-content:center; align-items:center;
   padding:0 clamp(12px,4vw,24px); pointer-events:none;
   opacity:0; transform:translateY(16px);
   transition:opacity .6s var(--ease), transform .6s var(--ease);
@@ -471,7 +460,7 @@ footer{
           <span aria-hidden="true">26</span>
         </div>
 
-        <p class="time"><span data-i18n="date.at">сағат</span> <b>13:00</b></p>
+        <p class="time"><span data-i18n="date.at">сағат</span> <b>17:00</b></p>
         <p class="year">2026</p>
 
         <div class="weekdays" aria-hidden="true">
@@ -483,13 +472,6 @@ footer{
           <span data-i18n="wd.sat">СЕНБІ</span>
           <span data-i18n="wd.sun">ЖЕКСЕНБІ</span>
         </div>
-      </div>
-
-      <div class="countdown rv" id="countdown" aria-live="polite" data-i18n-aria="cd.aria" aria-label="Тойға дейінгі уақыт">
-        <div class="cd"><b id="cd-d">—</b><i data-i18n="cd.days">күн</i></div>
-        <div class="cd"><b id="cd-h">—</b><i data-i18n="cd.hours">сағат</i></div>
-        <div class="cd"><b id="cd-m">—</b><i data-i18n="cd.min">минут</i></div>
-        <div class="cd"><b id="cd-s">—</b><i data-i18n="cd.sec">секунд</i></div>
       </div>
     </div>
   </section>
@@ -542,13 +524,6 @@ footer{
 
 <!-- ======= DOCK ======= -->
 <div class="dock" id="dock">
-  <button class="pill" id="musicBtn" aria-pressed="false">
-    <span class="pill__ico" id="musicIco">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-    </span>
-    <span id="musicText">Әуен қосу</span>
-  </button>
-
   <a class="pill" href="https://yandex.com/maps/org/shohona/90242348849"
      target="_blank" rel="noopener noreferrer">
     <span class="pill__ico">
@@ -560,7 +535,7 @@ footer{
   </a>
 </div>
 
-<audio id="audio" loop preload="none" src="music.mp3"></audio>
+<audio id="audio" loop preload="auto" src="music.mp3"></audio>
 
 <script>
 (function(){
@@ -587,15 +562,10 @@ footer{
       "date.dayAria":"24 қыркүйек",
       "wd.mon":"ДҮЙСЕНБІ","wd.tue":"СЕЙСЕНБІ","wd.wed":"СӘРСЕНБІ","wd.thu":"БЕЙСЕНБІ",
       "wd.fri":"ЖҰМА","wd.sat":"СЕНБІ","wd.sun":"ЖЕКСЕНБІ",
-      "cd.aria":"Тойға дейінгі уақыт",
-      "cd.days":"күн","cd.hours":"сағат","cd.min":"минут","cd.sec":"секунд",
-      "cd.done":"Той басталды!",
       "loc.title":"Мекенжайы:",
       "loc.address":"Янгиюль қаласы,<br>Ташкент шоқ көшесі,<br>«Shohona» мейрамханасы",
       "loc.btn":"Картадан ашу",
       "dock.map":"Мекенжай",
-      "music.play":"Әуен қосу",
-      "music.pause":"Әуенді тоқтату",
       "sign.eyebrow":"ҚҰРМЕТПЕН",
       "sign.family":"Ұмбетов отбасысы",
       "foot.note":"Қуанышымызды бірге бөліскеніңізге алғыс айтамыз"
@@ -619,15 +589,10 @@ footer{
       "date.dayAria":"24 сентября",
       "wd.mon":"ПОНЕДЕЛЬНИК","wd.tue":"ВТОРНИК","wd.wed":"СРЕДА","wd.thu":"ЧЕТВЕРГ",
       "wd.fri":"ПЯТНИЦА","wd.sat":"СУББОТА","wd.sun":"ВОСКРЕСЕНЬЕ",
-      "cd.aria":"Времени до торжества",
-      "cd.days":"дней","cd.hours":"часов","cd.min":"минут","cd.sec":"секунд",
-      "cd.done":"Торжество началось!",
       "loc.title":"Адрес:",
       "loc.address":"город Янгиюль,<br>улица Ташкент шох,<br>ресторан «Shohona»",
       "loc.btn":"Открыть на карте",
       "dock.map":"Адрес",
-      "music.play":"Включить музыку",
-      "music.pause":"Остановить музыку",
       "sign.eyebrow":"С УВАЖЕНИЕМ",
       "sign.family":"Семья Умбетовых",
       "foot.note":"Благодарим, что разделите с нами нашу радость"
@@ -656,7 +621,6 @@ footer{
       b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
     });
 
-    if(typeof syncMusicLabel === 'function') syncMusicLabel();
     try { localStorage.setItem('inv-lang', lang); } catch(e){}
   }
 
@@ -682,10 +646,13 @@ footer{
       themeBtn.classList.add('is-visible');
       gate.remove();
     }, 900);
-    tryPlay(true);
+    tryPlay();
     reveal();
   }
-  document.getElementById('openBtn').addEventListener('click', openInvitation);
+  var openBtn = document.getElementById('openBtn');
+  // старт звука на pointerdown — на пару кадров раньше, чем click
+  openBtn.addEventListener('pointerdown', function(){ tryPlay(); }, { once:true });
+  openBtn.addEventListener('click', openInvitation);
 
   /* ---- REVEAL ON SCROLL ---- */
   var items = document.querySelectorAll('.rv');
@@ -702,54 +669,20 @@ footer{
     items.forEach(function(el){ io.observe(el); });
   }
 
-  /* ---- COUNTDOWN ---- */
-  var target = new Date(2026, 8, 24, 13, 0, 0).getTime(); // 24.09.2026 13:00
-  var pad = function(n){ return n < 10 ? '0' + n : '' + n; };
-  var els = { d:document.getElementById('cd-d'), h:document.getElementById('cd-h'),
-              m:document.getElementById('cd-m'), s:document.getElementById('cd-s') };
-  function tick(){
-    var diff = target - Date.now();
-    if(diff <= 0){
-      document.getElementById('countdown').innerHTML =
-        '<div class="cd" style="min-width:auto;padding:14px 26px"><b data-i18n="cd.done">' + t('cd.done') + '</b></div>';
-      clearInterval(timer); return;
-    }
-    var s = Math.floor(diff/1000);
-    els.d.textContent = Math.floor(s/86400);
-    els.h.textContent = pad(Math.floor(s%86400/3600));
-    els.m.textContent = pad(Math.floor(s%3600/60));
-    els.s.textContent = pad(s%60);
-  }
-  var timer = setInterval(tick, 1000); tick();
-
-  /* ---- MUSIC ---- */
+  /* ---- MUSIC (автозапуск при открытии) ---- */
   var audio = document.getElementById('audio');
-  var musicBtn = document.getElementById('musicBtn');
-  var musicIco = document.getElementById('musicIco');
-  var musicText = document.getElementById('musicText');
-  var PLAY = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
-  var PAUSE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="3.4" height="14" rx="1"/><rect x="13.6" y="5" width="3.4" height="14" rx="1"/></svg>';
-
-  var playing = false;
-  function setState(on){
-    playing = on;
-    musicIco.innerHTML = on ? PAUSE : PLAY;
-    musicBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    syncMusicLabel();
-  }
-  function syncMusicLabel(){
-    musicText.textContent = playing ? t('music.pause') : t('music.play');
-  }
   audio.volume = 0.55;
-  function tryPlay(silentFail){
+  // буферизуем трек, пока показан экран «АШУ», чтобы звук стартовал мгновенно
+  try { audio.load(); } catch(e){}
+
+  function tryPlay(){
     var p = audio.play();
-    if(p && p.then){ p.then(function(){ setState(true); })
-                      .catch(function(){ if(!silentFail) setState(false); }); }
+    if(p && p.catch) p.catch(function(){ /* блокировка автозапуска — пробуем на след. касании */ });
   }
-  musicBtn.addEventListener('click', function(){
-    if(audio.paused){ tryPlay(false); } else { audio.pause(); setState(false); }
+  // подстраховка: если браузер всё-таки заблокировал звук, включаем на первом касании страницы
+  document.addEventListener('pointerdown', function(){
+    if(audio.paused) tryPlay();
   });
-  audio.addEventListener('error', function(){ musicBtn.style.display = 'none'; });
 
   /* ---- THEME ---- */
   var icon = document.getElementById('themeIcon');
